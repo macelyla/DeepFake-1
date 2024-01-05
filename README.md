@@ -39,10 +39,16 @@ You can install from PyPI as follows:
 
 ```python
 pip install TTS  # from PyPI
-pip install git+https://github.com/coqui-ai/TTS  # from Github, recommended for developmrnt
+pip install git+https://github.com/coqui-ai/TTS  # from Github
+```
+Installing from source for development: 
 
-
-
+```python
+git clone https://github.com/coqui-ai/TTS/
+cd TTS
+make system-deps  # only on Linux systems.
+make install
+```
 
 
 
