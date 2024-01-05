@@ -58,3 +58,13 @@ $ pip install -e .
 ```
 
 It is important to note that the formatter has to be adapted to your custom dataset after the installation. Our adaptation instructions are provided in a separate folder.
+
+## Present files and folders: 
+
+| **Folder**            | **Description**         |
+| ----------------------| ----------------------- |
+| Vocoder Training      | Tacotron Training       |
+| ----------------------| ----------------------- |
+| Vocoder Training      | Tacotron Training       |
+| ----------------------| ----------------------- |
+| Vocoder Training      | Tacotron Training       |
