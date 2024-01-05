@@ -31,6 +31,8 @@ While there are potential benefits, it's crucial to consider and address ethical
 | ----------------------| ----------------------- |
 | Vocoder Training      | Tacotron Training       |
 
+Progress, trial audios and graphs can be found here: https://drive.google.com/drive/folders/1N7ZZv8_XB92UpVr9Sb_4a1986dToDqaa?usp=sharing
+
 ## Library installation:
 
 The project uses TTS library. The installation instructions are provided below:
