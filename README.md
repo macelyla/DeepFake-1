@@ -31,6 +31,8 @@ While there are potential benefits, it's crucial to consider and address ethical
 | ----------------------| ----------------------- |
 | Vocoder Training      | Tacotron Training       |
 
+## Library installation and getting ready to train on a custom corpus:
+
 
 
 
