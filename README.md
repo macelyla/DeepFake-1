@@ -31,7 +31,16 @@ While there are potential benefits, it's crucial to consider and address ethical
 | ----------------------| ----------------------- |
 | Vocoder Training      | Tacotron Training       |
 
-## Library installation and getting ready to train on a custom corpus:
+## Library installation:
+
+The project uses TTS library. The installation instructions are provided below:
+
+You can install from PyPI as follows:
+
+```python
+pip install TTS  # from PyPI
+pip install git+https://github.com/coqui-ai/TTS  # from Github, recommended for developmrnt
+
 
 
 
