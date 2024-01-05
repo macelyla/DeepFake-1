@@ -27,6 +27,9 @@ While there are potential benefits, it's crucial to consider and address ethical
 
 # Instructions
 
+| Current Stage         | Next Stage              |
+| ----------------------| ----------------------- |
+| Vocoder Training      | Tacotron Training       |
 
 
 
