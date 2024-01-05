@@ -59,6 +59,7 @@ $ cd TTS
 $ pip install -e .
 ```
 You can read more about the library and check the documentation here: https://github.com/coqui-ai/TTS/ 
+
 It is important to note that the formatter has to be adapted to your custom dataset after the installation. Our adaptation instructions are provided in a separate folder.
 
 ## Present files and folders: 
