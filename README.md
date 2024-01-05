@@ -61,10 +61,9 @@ It is important to note that the formatter has to be adapted to your custom data
 
 ## Present files and folders: 
 
-| **Folder**            | **Description**         |
-| ----------------------| ----------------------- |
-| Vocoder Training      | Tacotron Training       |
-| ----------------------| ----------------------- |
-| Vocoder Training      | Tacotron Training       |
-| ----------------------| ----------------------- |
-| Vocoder Training      | Tacotron Training       |
+| **Folder**          | **Description**       |
+| --------------------| --------------------- |
+| Vocoder Training    | Tacotron Training     |
+| Vocoder Training    | Tacotron Training     |
+| Vocoder Training    | Tacotron Training     |
+
