@@ -64,9 +64,10 @@ It is important to note that the formatter has to be adapted to your custom data
 
 ## Present files and folders: 
 
-| **Folder**          | **Description**       |
-| --------------------| --------------------- |
-| Formatter           | custom formatter code |
-| Vocoders            | vocoder training codes|
-| TTS systems         | tts training codes    |
-
+| **Folder**          | **Description**        |
+| --------------------| -----------------------|
+| Formatter           | custom formatter code  |
+| Vocoders            | vocoder training codes |
+| TTS systems         | tts training codes     |
+| Errors              | error documentation    |
+| Final report        | final report and slides|
