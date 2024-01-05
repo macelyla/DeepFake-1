@@ -66,7 +66,7 @@ It is important to note that the formatter has to be adapted to your custom data
 
 | **Folder**          | **Description**       |
 | --------------------| --------------------- |
-| Vocoder Training    | Tacotron Training     |
-| Vocoder Training    | Tacotron Training     |
-| Vocoder Training    | Tacotron Training     |
+| Formatter           | custom formatter code |
+| Vocoders            | vocoder training codes|
+| TTS systems         | tts training codes    |
 
