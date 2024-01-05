@@ -49,6 +49,11 @@ cd TTS
 make system-deps  # only on Linux systems.
 make install
 ```
+Developer friendly installation
 
-
+```python
+$ git clone https://github.com/coqui-ai/TTS
+$ cd TTS
+$ pip install -e .
+```
 
