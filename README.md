@@ -71,5 +71,7 @@ It is important to note that the formatter has to be adapted to your custom data
 | TTS systems         | tts training codes     |
 | Errors              | error documentation    |
 | Final report        | final report and slides|
+| requirements.txt    | all packeges in our env|
+
 
 ## Dataset 
