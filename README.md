@@ -60,7 +60,7 @@ $ pip install -e .
 ```
 You can read more about the library and check the documentation here: https://github.com/coqui-ai/TTS/ 
 
-It is important to note that the formatter has to be adapted to your custom dataset after the installation. Our adaptation instructions are provided in a separate folder.
+:exclamation::exclamation: It is important to note that for the TTS systems training the formatter has to be adapted to your custom dataset after the installation. Our formatter is provided in a separate folder. :exclamation::exclamation:
 
 ## Present files and folders: 
 
