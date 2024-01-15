@@ -1,77 +1,75 @@
-# DeepFake
+# Coqui.ai 🐸
 
-**DeepFake project for M2 NLP**
+## Installation
 
-The project aims to create a multilingual corpus of deepfake audios using 5 different vocoders () and two TTS models (). The following paragraph will provide the benefits of this project whilst the bottom paragraph will provide instructions to access the audios and install the libraries. 
+Coqui.ai Text-to-Speech (TTS) is tested on Ubuntu 18.04 with **python >= 3.9, < 3.12**.
 
-# Benefits of a multilingual DeepFake corpus
+1. Create an Anaconda environment:
 
-Creating a multilingual deepfake audio corpus has several potential benefits, although it's important to note that deepfake technology raises ethical concerns, and it's essential to use such technology responsibly. Our corpus is constructed with an intention of training systems for deepfake detection. Here are some potential benefits:
+    ```bash
+    conda create -n coqui-tts python=3.10 pip
+    conda activate coqui-tts
+    ```
 
-**Diversity and Generalization:**
-A multilingual corpus allows the training of deepfake models on a diverse set of languages, dialects, and accents. This diversity can help the model generalize better to various linguistic nuances and improve its performance across different linguistic contexts. In our instance, we are using four languages that as we believe provide satisfactory linguistic variation: dutch, french, spanish and german. 
+2. Install PyTorch (Check [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)):
 
-**Robustness and Adaptability:**
-Exposure to a wide range of languages enhances the robustness of deepfake models. These models may become more adaptable to different linguistic environments, making them less prone to bias and more effective in handling variations in speech.
+    ```bash
+    pip3 install torch torchvision torchaudio
+    ```
 
-**Transfer Learning:**
-Training a deepfake model on a multilingual corpus may facilitate transfer learning. The knowledge gained from one language can be transferred to improve the model's performance when dealing with a new language. This can reduce the amount of data needed for training in a new language.
+3. Clone Coqui.ai TTS and install it locally:
 
-**Improved Accessibility and Inclusivity:**
-A multilingual corpus allows for the development of deepfake technology that supports and understands a broader range of languages. This can contribute to increased accessibility and inclusivity in voice-related technologies, benefiting users from different linguistic backgrounds.
+    ```bash
+    git clone https://github.com/coqui-ai/TTS
+    cd TTS
+    pip install -e .[all]
+    ```
 
-**Applications in Language Learning:**
-A multilingual deepfake audio corpus can be used in language learning applications to provide learners with diverse examples of native speakers, helping them practice and improve their language skills.
+## Docker Image
 
-While there are potential benefits, it's crucial to consider and address ethical concerns, including issues related to consent, privacy, misinformation, and potential misuse of the technology.
+You can also try Coqui.ai TTS without installing by using the Docker image. Run the following commands:
 
-# Instructions
-
-| Current Stage         | Next Stage              |
-| ----------------------| ----------------------- |
-| Vocoder Training      | Tacotron Training       |
-
-Progress, trial audios and graphs can be found here: https://drive.google.com/drive/folders/1N7ZZv8_XB92UpVr9Sb_4a1986dToDqaa?usp=sharing
-
-## Library installation:
-
-The project uses TTS library. The installation instructions are provided below:
-
-You can install from PyPI as follows:
-
-```python
-pip install TTS  # from PyPI
-pip install git+https://github.com/coqui-ai/TTS  # from Github
-```
-Installing from source for development: 
-
-```python
-git clone https://github.com/coqui-ai/TTS/
+```bash
 cd TTS
-make system-deps  # only on Linux systems.
-make install
+sudo docker build -t coqui-tts ./
+sudo docker run --net='host' --rm --shm-size=2g --runtime=nvidia -v /home/source:/root -w /root -it coqui-tts bash
 ```
-Developer friendly installation
 
-```python
-$ git clone https://github.com/coqui-ai/TTS
-$ cd TTS
-$ pip install -e .
+## Dataset Preparation
+
+Download and unzip the datasets:
+
+```bash
+mkdir DATASETS
+cd DATASETS
+wget -c https://www.openslr.org/resources/146/cml_tts_dataset_dutch_v0.1.tar.bz
+wget -c https://www.openslr.org/resources/146/cml_tts_dataset_french_v0.1.tar.bz
+wget -c https://www.openslr.org/resources/146/cml_tts_dataset_german_v0.1.tar.bz
+wget -c https://www.openslr.org/resources/146/cml_tts_dataset_spanish_v0.1.tar.bz
+
+tar -jxvf cml_tts_dataset_dutch_v0.1.tar.bz
+tar -jxvf cml_tts_dataset_french_v0.1.tar.bz
+tar -jxvf cml_tts_dataset_german_v0.1.tar.bz
+tar -jxvf cml_tts_dataset_spanish_v0.1.tar.bz
 ```
-You can read more about the library and check the documentation here: https://github.com/coqui-ai/TTS/ 
 
-It is important to note that the formatter has to be adapted to your custom dataset after the installation. Our adaptation instructions are provided in a separate folder.
+## Training Acoustic Models
 
-## Present files and folders: 
+To train the models, copy the training files to the repository root directory https://github.com/coqui-ai/TTS:
 
-| **Folder**          | **Description**        |
-| --------------------| -----------------------|
-| Formatter           | custom formatter code  |
-| Vocoders            | vocoder training codes |
-| TTS systems         | tts training codes     |
-| Errors              | error documentation    |
-| Final report        | final report and slides|
-| requirements.txt    | all packeges in our env|
+```bash
+cp train_tacotron2_deepfake_project.py TTS/
+cp train_fastspeech2_deepfake_project.py TTS/
+```
 
+Run the training scripts. For example:
 
-## Datasets
+```bash
+python train_tacotron2_deepfake_project.py
+```
+
+For multi-GPU training:
+
+```bash
+python3 -m trainer.distribute --gpus "0,1,2" --script train_tacotron2_deepfake_project.py \
+```
